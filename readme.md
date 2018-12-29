@@ -1,13 +1,16 @@
-#How to encrypt using Ansible Vault and Use Vault during run time
+##Author
+Bikash Sundaray
+
+##How to encrypt using Ansible Vault and Use Vault during run time
 ansible-playbook -i inventories/my-vm.yml start.yml
 
-#Help
+##Help
 export ANSIBLE_HOST_KEY_CHECKING=False
 
-#install
+##install
 sudo apt-get install python-pip
 
-#others
+##others
 Ansible logs generation - Audit
 Ansible docker - check image running status
 Check firewall allowed or not
