@@ -1,7 +1,7 @@
 ## Author
 Bikash Sundaray
 
-## How to encrypt using Ansible Vault and Use Vault during run time
+## Run Ansible Playbook
 ansible-playbook -i inventories/my-vm.yml start.yml
 
 ## Help
