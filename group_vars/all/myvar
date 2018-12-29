@@ -1,0 +1,3 @@
+#LinuxOS
+vm_user_group: mygroup
+vm_non_root_user: bikash

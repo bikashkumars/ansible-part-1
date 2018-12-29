@@ -1,0 +1,10 @@
+vm:
+    hosts:
+        198.168.2.2:
+            ansible_connection: ssh
+            ansible_user: username
+            ansible_ssh_pass: password
+            ansible_become: yes
+            ansible_become_method: sudo
+    vars:
+        proxy: no.proxy

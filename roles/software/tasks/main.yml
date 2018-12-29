@@ -1,0 +1,29 @@
+---
+# Software Installisation and Configuration Script
+- name: Install Software
+  debug:
+    msg: "Task - Install Required Software"
+
+- name: Install Docker
+  shell: |
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    apt-get update
+    apt-cache policy docker-ce
+    apt-get install -y docker-ce
+    systemctl status docker
+  become: yes
+  become_method: sudo
+
+- name: Copy Docker Compose Binary and make '{{ vm_non_root_user }}' User as Owner
+  copy:
+    src: docker-compose
+    dest: /usr/local/bin/
+    owner: '{{ vm_non_root_user }}'
+    group: '{{ vm_user_group }}'
+    mode: 0550
+
+- name: Restart service Docker, in all cases
+  service:
+    name: docker
+    state: restarted

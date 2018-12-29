@@ -1,0 +1,7 @@
+---
+# Install Docker, Docker Compose, Run App without Root, Deploy App, Configure Monitoring
+
+- hosts: all
+
+  roles:
+    - role: software
